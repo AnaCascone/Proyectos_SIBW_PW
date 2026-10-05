@@ -1,0 +1,212 @@
+/* --------- HERO --------- */
+.hero {
+    margin-bottom: 0;
+    text-align: center;
+    height: 82vh;
+    padding: 40px 20px;
+    background-image: url("../imagenes/japon_hero.jpg");
+    background-size: cover;
+    background-position: center 30%;
+
+    position: relative;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: var(--color-grey);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Fondo oscuro con efecto cristal */
+.hero-content {
+    background: rgba(1, 13, 39, 0.733); 
+    backdrop-filter: blur(10px); /* efecto cristal */
+
+    border-radius: 15px;
+
+    border: 1px solid var(--color-neon-blue);
+
+    text-align: center;
+
+    box-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.2),
+        0 0 40px rgba(123, 44, 255, 0.2);
+
+    padding: 25px 30px;     
+    max-width: 650px;       
+    width: 90%;
+}
+
+/* Ver viajes */
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--gradient-main);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.cta:hover {
+    background: var(--color-pink);
+}
+
+/* --------- INFO AGENCIA --------- */
+
+.info {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.info h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.info p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--color-grey);
+    line-height: 1.5;
+}
+
+
+/* --------- BUSCADOR --------- */
+
+.buscador {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.buscador h2 {
+    margin-bottom: 20px;
+}
+
+.buscador form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buscador input {
+    padding: 10px;
+    border: 1px solid var(--color-purple);
+    background-color: var(--color-bg);
+    color: var(--color-white);
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: var(--color-neon-blue);
+}
+
+.buscador button {
+    padding: 10px 20px;
+    background: var(--gradient-main);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background: var(--color-pink);
+}
+
+
+/* --------- CARRUSEL --------- */
+
+.carrusel {
+    max-width: 70rem;
+    margin: 3rem auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.slide {
+    display: none;
+
+    background-color: var(--color-bg-alt);
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    max-width: 40rem;
+    width: 100%;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.slide.activo {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    display: block;
+}
+
+.slide h3 {
+    padding: 1rem 1rem 0.5rem;
+}
+
+.slide p {
+    padding: 0 1rem 1rem;
+}
+
+.slide a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.slide:hover {
+    border-color: var(--color-neon-blue);
+}
+
+.carrusel button {
+    background: var(--gradient-main);
+    border: none;
+
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 50%;
+
+    color: white;
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.carrusel button:hover {
+    background: var(--color-pink);
+}

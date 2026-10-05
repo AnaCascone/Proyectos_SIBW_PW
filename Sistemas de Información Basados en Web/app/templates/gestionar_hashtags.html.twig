@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+
+        <section class="zona-articulos">
+
+            <h2>
+
+                Gestión de hashtags
+
+            </h2>
+
+
+            {% if errores %}
+
+                <div class="errores">
+
+                    {% for error in errores %}
+
+                        <p>
+
+                            {{ error }}
+
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            <div class="tabla-hashtags">
+
+                {% for hashtag in hashtags %}
+
+                    <div class="fila-hashtag">
+
+
+                        <!-- FORMULARIO -->
+
+                        <form
+                            method="POST"
+                            class="form-hashtag"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="id"
+                                value="{{ hashtag.id }}"
+                            >
+
+                            <input
+                                type="text"
+                                name="nombre"
+                                value="{{ hashtag.nombre }}"
+                                required
+                            >
+
+                            <button type="submit">
+
+                                Guardar
+
+                            </button>
+
+                        </form>
+
+
+                        <!-- ELIMINAR -->
+
+                        <a
+
+                            href="eliminar_hashtag.php?id={{ hashtag.id }}"
+
+                            class="eliminar-hashtag"
+
+                            onclick="return confirm('¿Eliminar hashtag?')"
+
+                        >
+
+                            ❌
+
+                        </a>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

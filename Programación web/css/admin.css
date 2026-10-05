@@ -1,0 +1,89 @@
+.admin-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.admin-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.admin-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-bg-alt);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.admin-tabla th,
+.admin-tabla td {
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.admin-tabla th {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--color-neon-blue);
+}
+
+.admin-tabla tr {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.admin-tabla tr:hover {
+    background-color: rgba(255,255,255,0.03);
+}
+
+.admin-acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-admin {
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-crear {
+    background: var(--gradient-main);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.btn-editar {
+    background-color: #3b82f6;
+}
+
+.btn-borrar {
+    background-color: #ef4444;
+}
+
+.btn-admin:hover {
+    opacity: 0.85;
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 0.4rem;
+
+    background-color: #6b7280;
+    color: white;
+
+    transition: 0.2s;
+}
+
+.btn-cancelar:hover {
+    opacity: 0.85;
+}

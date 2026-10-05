@@ -1,0 +1,85 @@
+<header class="cabecera">
+
+    <div class="logo">
+
+        <!-- El logo enlaza a la portada para poder volver fácilmente -->
+        <a href="portada.php">
+            <img src="img/logo_taramundi_informa.png" alt="Logo de Taramundi Informa">
+        </a>
+
+    </div>
+
+    <div class="titulo-sitio">
+
+        <h1>TARAMUNDI INFORMA</h1>
+
+    </div>
+
+    <!-- Gestión de usuario y enlaces de interés -->
+    <div class="bloque-derecha">
+
+        {% if mostrarAuthHeader is not defined or mostrarAuthHeader %}
+
+            <div class="usuario-sesion">
+
+                {% if usuarioSesion %}
+
+                    <div class="usuario-dropdown">
+
+                        <button id="btnUsuario" class="btn-usuario">
+
+                            Hola,
+
+                            <span class="usuario-nombre">
+                                {{ usuarioSesion.nombre }}
+                            </span>
+
+                        </button>
+
+                        <div id="menuUsuario" class="menu-usuario oculto">
+
+                            <a href="perfil.php">
+                                Editar perfil
+                            </a>
+
+                            <a href="logout.php" class="logout">
+                                Cerrar sesión
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                {% else %}
+
+                    <a href="login.php">
+                        Iniciar sesión
+                    </a>
+
+                    <a href="registro.php">
+                        Registrarse
+                    </a>
+
+                {% endif %}
+
+            </div>
+        
+        {% endif %}
+
+        <nav class="enlaces-interes">
+
+            <!-- target="_blank" abre el enlace en otra pestaña -->
+            <a href="https://www.taramundi.es/" target="_blank">Ayuntamiento</a>
+
+            <span class="separador">·</span>
+
+            <a href="#">Turismo</a>
+
+            <span class="separador">·</span>
+
+            <a href="#">Contacto</a>
+
+        </nav>
+    </div>
+    
+</header>

@@ -1,0 +1,122 @@
+.calendario {
+    width: 100%;
+    border-collapse: collapse; /* evitar dobles líneas */
+    text-align: center;
+}
+
+.calendario th {
+    padding: 0.5rem;
+    background-color: var(--color-bg-alt);
+    color: var(--color-neon-blue);
+}
+
+.calendario td {
+    padding: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* SEPARACIÓN ENTRE MESES */
+.calendario td:nth-child(7),
+.calendario th:nth-child(1) {
+    border-right: 2px solid var(--color-neon-blue);
+}
+
+/* FILA SEPARADORA */
+.separador td {
+    height: 1rem;
+    border: none;
+}
+
+/* Fondo para la tabla */
+.tabla-wrapper {
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.8rem;
+    overflow: hidden; /* Recorta lo que sobresalga */
+}
+
+/* ---------- COLORES DE TEMPORADA --------- */
+
+:root {
+    --color-baja: rgba(0, 255, 170, 0.25);   /* verde neon */
+    --color-media: rgba(255, 170, 0, 0.4);   /* naranja */
+    --color-alta: rgba(255, 60, 100, 0.45);  /* rojo/rosa fuerte */
+}
+
+.baja {
+    background-color: var(--color-baja);
+}
+
+.media {
+    background-color: var(--color-media);
+}
+
+.alta {
+    background-color: var(--color-alta);
+}
+
+/* ---------- LEYENDA --------- */
+
+.leyenda {
+    max-width: 40rem;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    /* Caja visual tipo tarjeta */
+
+    background-color: var(--color-bg-alt);
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.1),
+        0 0 25px rgba(123, 44, 255, 0.1);
+}
+
+/* Cada item */
+.leyenda p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+}
+
+/* Cuadradito de color */
+.leyenda span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.2rem;
+}
+
+/* Colores */
+.leyenda .baja {
+    background-color: var(--color-baja);
+}
+
+.leyenda .media {
+    background-color: var(--color-media);
+}
+
+.leyenda .alta {
+    background-color: var(--color-alta);
+}
+
+.ofertas-lista {
+    position: relative;
+    z-index: 1;
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+

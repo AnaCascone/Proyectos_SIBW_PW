@@ -1,0 +1,87 @@
+{% for noticia in noticias %}
+
+    <article class="tarjeta-incidencia">
+
+        <img
+            src="img/{{ noticia.imagen }}"
+            alt="{{ noticia.titulo }}"
+        >
+
+        <h3>
+            {{ noticia.titulo }}
+        </h3>
+
+        <p class="fecha-incidencia">
+
+            {{ noticia.fecha }}
+
+        </p>
+
+
+        {% if noticia.hashtags %}
+
+            <p class="hashtags-noticia">
+
+                {% for hashtag in noticia.hashtags %}
+
+                    #{{ hashtag.nombre }}
+
+                {% endfor %}
+
+            </p>
+
+        {% endif %}
+
+
+        <p class="resumen-noticia">
+
+            {{ noticia.resumen }}
+
+        </p>
+
+
+        <!-- ================= -->
+        <!--      ACCIONES     -->
+        <!-- ================= -->
+
+        <div class="acciones-noticia">
+
+            <a
+                href="editar_noticia.php?id={{ noticia.id }}"
+                class="editar-noticia"
+            >
+
+                ✎ Editar
+
+            </a>
+
+            <a
+                href="eliminar_noticia.php?id={{ noticia.id }}"
+                class="eliminar-noticia"
+                onclick="return confirm('¿Eliminar noticia?')"
+            >
+
+                ❌ Eliminar
+
+            </a>
+
+        </div>
+
+        <br>
+
+        <label class="estado-publicado">
+
+            <input
+                type="checkbox"
+                class="checkbox-publicado"
+                data-id="{{ noticia.id }}"
+                {% if noticia.publicado %}checked{% endif %}
+            >
+
+            Publicada
+
+        </label>
+
+    </article>
+
+{% endfor %}

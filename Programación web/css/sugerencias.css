@@ -1,0 +1,33 @@
+
+/* ----- FORMULARIO ------ */
+
+.sugerencias-main {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.lista-sugerencias {
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+
+/* ------- COMENTARIOS ------- */
+
+#lista li {
+    list-style: none;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+#lista small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-grey);
+    opacity: 0.6;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}

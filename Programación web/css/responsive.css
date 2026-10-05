@@ -1,0 +1,207 @@
+/* =========================================================
+   RESPONSIVE - NEXUS GATE
+   Breakpoint principal: tablets y móviles (<= 768px)
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .top-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 0.6rem;
+    }
+
+    /* LOGIN */
+    .login {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login form {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .login input {
+        width: 80%;
+    }
+
+    .login button {
+        width: 50%;
+    }
+
+    /* Reordenamos: primero login, luego registrarse */
+    .login form {
+        order: 1;
+    }
+
+    .registro {
+        order: 2;
+        margin-top: 8px;
+    }
+
+    /* =========================
+        INDEX.HTML
+    ========================= */
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    /* -------- HERO --------*/
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero-logo {
+        width: 150px;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    /* -------- INFO AGENCIA --------*/
+
+    .info {
+        padding: 40px 15px;
+    }
+
+    .info h2 {
+        font-size: 1.4rem;
+    }
+
+    .info p {
+        font-size: 0.9rem;
+    }
+
+    /* -------- BUSCADOR --------*/
+
+    .buscador {
+        padding: 40px 15px;
+    }
+
+    .buscador form {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buscador input,
+    .buscador button {
+        width: 80%;
+    }
+
+    /* -------- CARRUSEL -------- */
+
+    .carrusel {
+        flex-direction: column;
+    }
+
+    .slide img {
+        height: 12rem;
+    }
+        
+    /* =========================
+       VIAJES.HTML
+    ========================= */
+
+    .viajes-main {
+        grid-template-columns: 1fr; 
+    }
+
+    .menu-lateral {
+        position: static; /* Eliminar el sticky */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* =========================
+       SOBRE AGENCIA
+    ========================= */
+
+    .oficina {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .oficina ul {
+        list-style: none;
+    }
+
+    .oficina-info {
+        margin-left: 0rem;
+    }
+
+    /* =========================
+       VIAJES GRUPO
+    ========================= */
+
+    .viaje-grupo {
+        flex-direction: column;
+    }
+
+    .viaje-img img {
+        max-height: 10rem;
+    }
+
+    /* =========================
+       VIAJE INDIVIDUAL
+    ========================= */
+    .viaje-hero {
+        height: 18rem;
+    }
+
+    .viaje-contenido {
+        flex-direction: column;
+        margin-top: -2rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 15px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}

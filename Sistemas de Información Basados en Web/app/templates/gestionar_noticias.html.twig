@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+
+        <section class="zona-articulos">
+
+            <h2>
+                Gestión de noticias
+            </h2>
+
+            <form
+                id="formBusquedaNoticias"
+                class="buscador-noticias"
+            >
+
+                <input
+                    id="tituloBusqueda"
+                    type="text"
+                    name="titulo"
+                    placeholder="Buscar por título..."
+                    value="{{ titulo }}"
+                >
+
+                <input
+                    id="descripcionBusqueda"
+                    type="text"
+                    name="descripcion"
+                    placeholder="Buscar en el contenido..."
+                    value="{{ descripcion }}"
+                >
+
+
+            </form>
+
+
+            <!-- ============================= -->
+            <!--      BOTÓN NUEVA NOTICIA      -->
+            <!-- ============================= -->
+
+            <a
+                href="crear_noticia.php"
+                class="btn-crear"
+            >
+
+                + Nueva noticia
+
+            </a>
+
+            <!-- ============================= -->
+            <!--        BOTÓN GESTIÓN #        -->
+            <!-- ============================= -->
+
+            <a
+                href="gestionar_hashtags.php"
+                class="btn-gestionar-hashtags"
+            >
+
+                # Gestionar hashtags
+
+            </a>
+
+
+            <!-- ============================= -->
+            <!--        LISTADO NOTICIAS       -->
+            <!-- ============================= -->
+
+            <div
+                class="grid-incidencias"
+                id="resultadosNoticias"
+            >
+
+                {% include '_lista_noticias_gestion.html.twig' %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

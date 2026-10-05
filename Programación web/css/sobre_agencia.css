@@ -1,0 +1,57 @@
+/* CONTENEDOR */
+
+.oficinas {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+/* TARJETAS */
+
+.oficina {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+
+    transition: 0.2s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.oficina:hover {
+    transform: translateY(-0.3rem);
+    border-color: var(--color-neon-blue);
+}
+
+/* INFO (derecha) */
+.oficina-info {
+    flex: 1;
+    margin-left: 1.5rem;
+}
+
+/* MAPA (izquierda) */
+.oficina-mapa {
+    flex: 1;
+}
+
+.oficina-mapa img {
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    max-height: 250px;
+}
+
+/* LISTA */
+
+.oficina ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.oficina li {
+    margin-bottom: 0.3rem;
+}

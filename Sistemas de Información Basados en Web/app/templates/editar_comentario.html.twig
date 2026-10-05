@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        <section class="zona-articulos">
+
+            <h2>
+                Editar comentario
+            </h2>
+
+            {% if errores %}
+
+                <div class="errores">
+
+                    {% for error in errores %}
+
+                        <p>{{ error }}</p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            <form
+                method="POST"
+                class="form-comentarios"
+            >
+
+                <textarea
+                    id="texto"
+                    name="texto"
+                    required
+                >{{ comentario.texto }}</textarea>
+
+                <button type="submit">
+
+                    Guardar cambios
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

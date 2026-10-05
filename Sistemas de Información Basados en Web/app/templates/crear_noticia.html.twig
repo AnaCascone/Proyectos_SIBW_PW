@@ -1,0 +1,210 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+
+        <section class="zona-articulos">
+
+            <h2>
+                Nueva noticia
+            </h2>
+
+
+            <!-- ============================= -->
+            <!--            ERRORES            -->
+            <!-- ============================= -->
+
+            {% if errores %}
+
+                <div class="errores">
+
+                    {% for error in errores %}
+
+                        <p>{{ error }}</p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- ============================= -->
+            <!--         FORMULARIO            -->
+            <!-- ============================= -->
+
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+                class="form-comentarios"
+                id="formCrearNoticia"
+            >
+
+                <label for="titulo">
+
+                    Título
+
+                </label>
+
+                <input
+                    type="text"
+                    id="titulo"
+                    name="titulo"
+                    required
+                >
+
+
+                <label for="cuerpo">
+
+                    Cuerpo
+
+                </label>
+
+                <textarea
+                    id="cuerpo"
+                    name="cuerpo"
+                    required
+                ></textarea>
+
+
+                <label for="fecha">
+
+                    Fecha
+
+                </label>
+
+                <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    required
+                >
+
+
+                <label for="resumen">
+
+                    Resumen
+
+                </label>
+
+                <input
+                    type="text"
+                    id="resumen"
+                    name="resumen"
+                >
+
+
+                <label for="concejalia">
+
+                    Concejalía
+
+                </label>
+
+                <input
+                    type="text"
+                    id="concejalia"
+                    name="concejalia"
+                >
+
+
+                <label for="responsables">
+
+                    Responsables
+
+                </label>
+
+                <input
+                    type="text"
+                    id="responsables"
+                    name="responsables"
+                >
+
+
+                <hr>
+
+                <h3>
+                    Añadir imagen
+                </h3>
+
+
+                <label for="archivo">
+
+                    Archivo imagen
+
+                </label>
+
+                <input
+                    type="file"
+                    id="archivo"
+                    name="archivo"
+                    accept="image/*"
+                >
+
+
+                <label for="descripcion_imagen">
+
+                    Descripción imagen
+
+                </label>
+
+                <input
+                    type="text"
+                    id="descripcion_imagen"
+                    name="descripcion_imagen"
+                >
+
+                <label for="hashtags">
+
+                    Hashtags
+
+                </label>
+
+                <input
+                    type="text"
+                    id="hashtags"
+                    name="hashtags"
+                    placeholder="incendio, trafico, alerta"
+                >
+
+                <label>
+
+                    Publicar inmediatamente
+
+                </label>
+
+                <input
+                    type="checkbox"
+                    name="publicado"
+                    checked
+                >
+
+
+                <button type="submit">
+
+                    Crear noticia
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

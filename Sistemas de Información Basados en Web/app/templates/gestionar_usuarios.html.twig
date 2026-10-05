@@ -1,0 +1,182 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+
+        <section class="zona-articulos">
+
+            <h2>
+
+                Gestión de usuarios
+
+            </h2>
+
+
+            {% if errores %}
+
+                <div class="errores">
+
+                    {% for error in errores %}
+
+                        <p>
+
+                            {{ error }}
+
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+
+            <div class="tabla-usuarios">
+
+                {% for usuario in usuarios %}
+
+                    <div class="fila-usuario">
+
+
+                        <!-- INFO USUARIO -->
+
+                        <div class="info-usuario">
+
+                            <strong>
+
+                                {{ usuario.nombre }}
+
+                            </strong>
+
+                            <br>
+
+                            <small>
+
+                                {{ usuario.email }}
+
+                            </small>
+
+                        </div>
+
+
+                        <!-- CAMBIAR ROL -->
+
+                        <form
+                            method="POST"
+                            class="form-rol"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="id"
+                                value="{{ usuario.id }}"
+                            >
+
+                            <select name="rol">
+
+                                <option
+                                    value="registrado"
+
+                                    {% if usuario.rol == 'registrado' %}
+                                        selected
+                                    {% endif %}
+                                >
+
+                                    Registrado
+
+                                </option>
+
+                                <option
+                                    value="moderador"
+
+                                    {% if usuario.rol == 'moderador' %}
+                                        selected
+                                    {% endif %}
+                                >
+
+                                    Moderador
+
+                                </option>
+
+                                <option
+                                    value="gestor"
+
+                                    {% if usuario.rol == 'gestor' %}
+                                        selected
+                                    {% endif %}
+                                >
+
+                                    Gestor
+
+                                </option>
+
+                                <option
+                                    value="superusuario"
+
+                                    {% if usuario.rol == 'superusuario' %}
+                                        selected
+                                    {% endif %}
+                                >
+
+                                    Superusuario
+
+                                </option>
+
+                            </select>
+
+                            <button type="submit">
+
+                                Guardar
+
+                            </button>
+
+                        </form>
+
+
+                        <!-- ELIMINAR -->
+
+                        {% if usuario.id != usuarioSesion.id %}
+
+                            <a
+
+                                href="eliminar_usuario.php?id={{ usuario.id }}"
+
+                                class="eliminar-usuario"
+
+                                onclick="return confirm('¿Eliminar usuario?')"
+
+                            >
+
+                                ❌
+
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

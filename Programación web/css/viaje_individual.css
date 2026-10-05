@@ -1,0 +1,141 @@
+/* =========================
+   HERO (IMAGEN GRANDE)
+========================= */
+
+.viaje-hero {
+    position: relative;
+    height: 26rem;
+    overflow: hidden;
+}
+
+.viaje-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay oscuro */
+.viaje-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(11,15,26,0.9));
+}
+
+/* =========================
+   CONTENIDO GENERAL
+========================= */
+
+.viaje-contenido {
+    max-width: 80rem;
+    margin: -4rem auto 0 auto; /* sube el contenido sobre la imagen */
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   BLOQUE IZQUIERDO
+========================= */
+
+.viaje-info {
+    flex: 2;
+    background-color: var(--color-bg-alt);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.1),
+        0 0 40px rgba(123, 44, 255, 0.1);
+}
+
+/* TÍTULO */
+.viaje-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+
+    background: var(--gradient-main);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* TEXTOS */
+.viaje-info p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* SUBTÍTULOS */
+.viaje-info h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-cyan);
+}
+
+/* LISTA */
+.viaje-info ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.viaje-info li {
+    margin-bottom: 0.3rem;
+}
+
+/* =========================
+   SIDEBAR (RELACIONADOS)
+========================= */
+
+.viaje-relacionados {
+    flex: 1;
+    background: linear-gradient(180deg, var(--color-bg-alt), #0f172a);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow: 
+        0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+/* TÍTULO */
+.viaje-relacionados h3 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+/* LISTA */
+.viaje-relacionados ul {
+    list-style: none;
+    padding: 0;
+}
+
+.viaje-relacionados li {
+    margin-bottom: 0.6rem;
+}
+
+/* Links */
+.viaje-relacionados a {
+    text-decoration: none;
+    color: var(--color-neon-blue);
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+/* Hover */
+.viaje-relacionados a:hover {
+    color: var(--color-pink);
+    padding-left: 5px;
+}
+
+/* SEPARADOR PARA LA SEGUNDA LISTA */
+.relacionados-extra {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}

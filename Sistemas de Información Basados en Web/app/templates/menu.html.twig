@@ -1,0 +1,55 @@
+<aside class="menu-lateral">
+
+    <h2>Menú</h2>
+
+    <a href="portada.php">Inicio</a>
+    <a href="#">Incidencias</a>
+    <a href="#">Noticias</a>
+
+    {% if usuarioSesion and (
+        usuarioSesion.rol == 'moderador'
+        or
+        usuarioSesion.rol == 'superusuario'
+    ) %}
+
+        <hr>
+
+        <a href="gestionar_comentarios.php">
+
+            Gestionar comentarios
+
+        </a>
+
+    {% endif %}
+
+    {% if usuarioSesion and (
+        usuarioSesion.rol == 'gestor'
+        or
+        usuarioSesion.rol == 'superusuario'
+    ) %}
+
+        <hr>
+
+        <a href="gestionar_noticias.php">
+
+            Gestionar noticias
+
+        </a>
+
+    {% endif %}
+
+    {% if usuarioSesion and (
+        usuarioSesion.rol == 'superusuario'
+    ) %}
+
+        <hr>
+
+        <a href="gestionar_usuarios.php">
+
+            Gestionar usuarios
+
+        </a>
+
+    {% endif %}
+        
+</aside>

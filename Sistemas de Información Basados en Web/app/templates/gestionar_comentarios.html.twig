@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+
+        <section class="zona-articulos">
+
+            <h2>
+                Gestión de comentarios
+            </h2>
+
+
+            <!-- ============================= -->
+            <!--          BUSCADOR             -->
+            <!-- ============================= -->
+
+            <form
+                method="GET"
+                class="form-buscador"
+            >
+
+                <input
+                    type="text"
+                    name="busqueda"
+                    placeholder="Buscar comentario..."
+                    value="{{ busqueda }}"
+                >
+
+                <button type="submit">
+
+                    Buscar
+
+                </button>
+
+            </form>
+
+
+            <!-- ============================= -->
+            <!--      LISTADO COMENTARIOS      -->
+            <!-- ============================= -->
+
+            {% if comentarios %}
+
+                {% for comentario in comentarios %}
+
+                    <div class="comentario">
+
+                        <div class="cabecera-comentario">
+
+                            <strong>
+
+                                {{ comentario.nombre }}
+
+                            </strong>
+
+                            <div class="acciones-comentario">
+
+                                <a
+                                    href="editar_comentario.php?id={{ comentario.id }}"
+                                    class="editar-comentario"
+                                >
+                                    ✎
+                                </a>
+
+                                <a
+                                    href="eliminar_comentario.php?id={{ comentario.id }}"
+                                    class="eliminar-comentario"
+                                    onclick="return confirm('¿Eliminar comentario?')"
+                                >
+                                    ❌
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <small>
+
+                            {{ comentario.fecha }}
+
+                        </small>
+
+
+                        <p>
+
+                            {{ comentario.texto }}
+
+                        </p>
+
+
+                        {% if comentario.editado %}
+
+                            <span class="comentario-editado">
+
+                                (Mensaje editado por moderador)
+
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+
+            {% else %}
+
+                <p>
+
+                    No se encontraron comentarios.
+
+                </p>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}

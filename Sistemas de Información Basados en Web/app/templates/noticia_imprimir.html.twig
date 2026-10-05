@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/imprimir.css">
+
+{% endblock %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <!-- Contenido principal -->
+    <main class="contenedor-principal">
+
+        <!-- MENÚ LATERAL -->
+        {% include 'menu.html.twig' %}
+
+        <!-- ZONA PRINCIPAL -->
+        <section class="zona-articulos">
+            <article class="detalle-noticia">
+                <div class="cabecera-noticia">
+                    <h2>{{ noticia.titulo }}</h2>
+                </div>
+
+                <div class="datos-noticia">
+                    <p><strong>Fecha:</strong> {{ noticia.fecha }} </p>
+                    <p><strong>Resumen:</strong> {{ noticia.resumen }} </p>
+                    <p><strong>Concejalía:</strong> {{ noticia.concejalia }} </p>
+                    <p><strong>Responsables:</strong> {{ noticia.responsables }} </p>
+                </div>
+
+                <div class="texto-noticia">
+                    {{ noticia.cuerpo|nl2br }}
+                    
+                    {# Esto se pone para conservar los párrafos #}
+                </div>
+
+                <div class="galeria-noticia">
+
+                    {% for imagen in imagenes %}
+
+                    <figure>
+
+                        <img src="img/{{ imagen.archivo }}"
+                            alt="{{ imagen.descripcion }}">
+
+                        <figcaption>
+                            {{ imagen.descripcion }}
+                        </figcaption>
+
+                    </figure>
+
+                    {% endfor %}
+
+                </div>
+            </article>
+            
+            <!--Botones flotantes para las RRSS e imprimir-->
+            <div class="botones-flotantes">
+                <a href="#" class="boton-social">
+                    <img src="img/instagram.png" alt="Compartir en Instagram">
+                </a>
+                <a href="#" class="boton-social">
+                    <img src="img/twitter.png" alt="Compartir en Twitter">
+                </a>
+                <a href="#" class="boton-social">
+                    <img src="img/tiktok.png" alt="Compartir en TikTok">
+                </a>
+                <a href="noticia_imprimir.php" class="boton-social">
+                    <img src="img/imprimir.png" alt="Imprimir">
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    {% include 'footer.html.twig' %}
+    
+{% endblock %}

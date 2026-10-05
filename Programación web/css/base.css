@@ -1,0 +1,410 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* COLORES BASE */
+    --color-bg: #0B0F1A;
+    --color-bg-alt: #121A2B;
+
+    /* COLORES PRINCIPALES */
+    --color-neon-blue: #00D4FF;
+    --color-purple: #7B2CFF;
+
+    /* ACENTO */
+    --color-pink: #FF2D9A;
+
+    /* SECUNDARIOS */
+    --color-cyan: #4BE3FF;
+
+    /* NEUTROS */
+    --color-grey: #AAB3C5;
+    --color-white: #EAF2FF;
+
+    /* GRADIENTES */
+    --gradient-main: linear-gradient(90deg, #00D4FF, #7B2CFF);
+}
+
+/* ------------ GLOBAL ------------ */
+
+/** ESTILO BARRA DE SCROLL
+* Ancho de la barra
+* Fondo de la barra
+* La parte que arrastras con el ratón
+* Efecto hover
+* Compatibilidad con Firefox
+*/
+
+Ancho de la barra */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-purple);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-neon-blue);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-purple) var(--color-bg);
+}
+
+
+/* TITULOS */
+h2 {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+
+/* TEXTO */
+p {
+    line-height: 1.5;
+    color: var(--color-grey);
+}
+
+
+/* LINKS */
+a {
+    transition: 0.2s;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+/* BODY */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    font-family: Arial, sans-serif;
+}
+
+/* Contendor principal para mantener el footer abajo */
+body.layout-base {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.layout-base main {
+    flex: 1;
+}
+
+
+/* ------------ FONDO ------------ */
+
+/* FONDO GAMER */
+
+.fondo-gamer {
+    background-image: url("../imagenes/japon_hero.jpg");
+    
+    /* La imagen se asjusta para cubrir todo el contenedor sin deformarse */
+    background-size: cover;
+
+    background-position: center;
+
+    /* La imagen de fondo se mantiene fija mientras se hace scroll */
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+/* Capa adicional encima del fondo */
+.fondo-gamer::before {
+    content: "";
+
+    /* Fijar en la pantalla ocupando todo el viewport */
+    position: fixed;
+    inset: 0;
+
+    background: rgba(11, 15, 26, 0.7);
+    backdrop-filter: blur(6px);
+
+    /* Desenfoque */
+    z-index: -1;
+}
+
+/* ------------ HEADER ------------ */
+
+header {
+    background: linear-gradient(90deg, var(--color-bg-alt), var(--color-bg));
+    border-bottom: 2px solid var(--color-neon-blue);
+}
+
+/* TOP BAR: encima del nav*/
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* LOGO CONTENEDOR: Logo + Nombre de la agencia */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 90px;
+    filter: drop-shadow(0 0 8px var(--color-neon-blue))
+            drop-shadow(0 0 12px var(--color-purple));
+}
+
+.logo-text h1 {
+    font-size: 1.6rem;
+
+    /* Se aplica un fondo gradiente */
+    background: linear-gradient(90deg, var(--color-neon-blue), var(--color-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    /* Hace el texto transparente para que se vea el gradiente */
+    -webkit-text-fill-color: transparent;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+/* TAGLINE: debajo del logo*/
+.tagline {
+    font-size: 0.7rem;
+    color: var(--color-grey);
+    letter-spacing: 2px;
+}
+
+/* LOGIN */
+.login {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login form {
+    display: flex;
+    gap: 10px;
+}
+
+.registro {
+    color: var(--color-grey);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.registro:hover{
+    color: var(--color-neon-blue);
+}
+
+.login input {
+    padding: 6px 8px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-purple);
+    color: var(--color-white);
+}
+
+.login input:focus {
+    outline: none;
+    border-color: var(--color-neon-blue);
+}
+
+.login button {
+    background: var(--gradient-main);
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login button:hover {
+    background: var(--color-pink);
+}
+
+.login a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* NAV */
+nav {
+    background-color: var(--color-bg-alt);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav li {
+    margin: 0.6rem 1.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-grey);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-neon-blue);
+}
+
+/* Pestaña activa */
+nav a.active {
+    color: var(--color-neon-blue);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ------------ MAIN ------------ */
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+/* ------------ FOOTER ------------ */
+
+footer {
+    background-color: var(--color-bg-alt);
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--color-purple);
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: var(--color-cyan);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--color-pink);
+}
+
+.fecha {
+    font-size: 0.8rem;
+    color: var(--color-grey);
+}
+/* ------------ MENSAJES DE ERROR ------------ */
+.error {
+    color: var(--color-pink);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* ------------ USUARIO ACTIVO (cabecera) ------------ */
+.usuario-activo {
+    color: var(--color-white);
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================
+             FORMULARIOS GENERALES 
+/========================================== */
+
+/* ----------- CONTENDOR GENERAL ----------- */
+
+.form-container {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+
+/* ----------- CAJA DEL FORMULARIO ----------- */
+
+.form-box {
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* ----------- CAMPOS DE ENTRADA ----------- */
+
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-purple);
+    color: var(--color-white);
+
+    resize: vertical;
+}
+
+/* focus global para formularios */
+.form-box input:focus,
+.form-box textarea:focus {
+    outline: none;
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 5px var(--color-neon-blue);
+}
+
+
+/* ----------- BOTÓN ----------- */
+
+.btn-formulario {
+    background: var(--gradient-main);
+    border: none;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    color: white;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.btn-formulario:hover {
+    background: var(--color-pink);
+}
+
+.btn-formulario:active {
+    transform: scale(0.97);
+}
+
+/* ------------- SELECT ------------- */
+.form-box select {
+    width: 100%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-purple);
+    color: var(--color-white);
+}
+
+.form-box select:focus {
+    outline: none;
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 5px var(--color-neon-blue);
+}

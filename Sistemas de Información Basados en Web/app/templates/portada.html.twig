@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block estilos %}
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+{% endblock %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <main class="contenedor-principal">
+
+        {% include 'menu.html.twig' %}
+        
+        <section class="zona-articulos">
+            <h2>Últimas incidencias</h2>
+
+            <div class="buscador-portada">
+
+                <input
+                    type="text"
+                    id="busquedaNoticias"
+                    placeholder="Buscar noticias..."
+                >
+
+                <div id="resultadosBusqueda">
+
+                </div>
+
+            </div>
+
+            <form
+                method="GET"
+                class="form-buscador"
+            >
+
+                <input
+                    type="text"
+                    name="hashtag"
+                    placeholder="Buscar por hashtag..."
+                    value="{{ busqueda }}"
+                >
+
+                <button type="submit">
+
+                    Buscar
+
+                </button>
+
+            </form>
+
+            <div class="grid-incidencias">
+
+                {% for noticia in noticias %}
+
+                <article class="tarjeta-incidencia">
+
+                    <img src="img/{{ noticia.imagen }}" alt="{{ noticia.titulo }}">
+
+                    <h3>{{ noticia.titulo }}</h3>
+
+                    <p class="fecha-incidencia">
+
+                        {{ noticia.fecha }}
+
+                    </p>
+
+
+                    {% if noticia.hashtags %}
+
+                        <p class="hashtags-noticia">
+
+                            {% for hashtag in noticia.hashtags %}
+
+                                #{{ hashtag.nombre }}
+
+                            {% endfor %}
+
+                        </p>
+
+                    {% endif %}
+
+
+                    <p class="resumen-noticia">
+
+                        {{ noticia.resumen }}
+
+                    </p>
+
+                    <a href="noticia.php?id={{ noticia.id }}">
+                        Ver más
+                    </a>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+        
+        </section>
+
+    </main>
+
+    {% include 'footer.html.twig' %}
+
+    <script src="js/interacciones.js"></script>
+
+{% endblock %}
